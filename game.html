@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="game.css">
+    <title>Unique Random Digits Table</title>
+  </head>
+  <body>
+    <div class="levels">
+      <h1>CHOOSE THE LEVEL</h1>
+      <div class="levels__container">
+        <div class="levels__block">
+          <button class="easy btn btn-primary btn-ghost btn-shine">EASY</button>
+        </div>
+        <div class="levels__block">
+          <button class="moderate btn btn-primary btn-ghost btn-shine">Moderate</button>
+        </div>
+        <div class="levels__block">
+          <button class="difficult btn btn-primary btn-ghost btn-shine">Difficult</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="start-game">
+      <h1>MEMORY BLOCKS</h1>
+      <div class="start-game__tables">
+        <table class="initial-table"></table>
+        <table class="secondary-table"></table>
+      </div>
+      <div class="start-game__block">
+        <button class="fail btn btn-primary btn-ghost btn-shine">QUIT</button>
+        <button class="back btn btn-primary btn-ghost btn-shine">back</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

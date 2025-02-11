@@ -1,0 +1,210 @@
+body {
+  background-image: url(./assets/game-assets/intro-bg-img.jpg);
+  background-size: cover;
+  backdrop-filter: grayscale(1);
+  font-family: "Exo 2", serif;
+  height: unset;
+  margin: 0;
+}
+
+.intro {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.intro__title, h1 {
+  font-size: 48px;
+  color: #070b04;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+  text-shadow: 0 0 5px #ced6d6, 0 0 10px #14bbd2, 0 0 20px #14bbd2, 0 0 40px #14bbd2, 0 0 80px #14bbd200;
+}
+
+a {
+  background-image: linear-gradient(to right, #6e8e99, #ebe4e9 50%, #11bbc2f2 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  font-weight: 700;
+  position: relative;
+  font-size: 40px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+a:before{
+  content: '';
+  background: #54b3d6;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+ background-position: 0;
+}
+
+a:hover::before{
+  width: 100%;
+}
+
+.levels {
+  height: 100vh;
+}
+
+h1 {
+  padding-top: 100px;
+}
+
+.levels__container, .start-game__block {
+  filter: drop-shadow(2px 4px 6px skyblue);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 100px;
+    padding-top: 70px;
+    background: radial-gradient(#715b5b85, #00000000);
+    padding-bottom: 70px;
+}
+
+.btn {
+  --hue: 190;
+  position: relative;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: hsl(var(--hue), 100%, 41%);
+  border: 1px solid hsl(var(--hue), 100%, 41%);
+  outline: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background: hsl(var(--hue), 100%, 31%);
+}
+
+.btn-primary {
+  --hue: 187;
+}
+
+.btn-ghost {
+  color: hsl(187deg 42.91% 87.59%);
+  background-color: #1c1a1a94;
+  border-color: hsl(187deg 82.41% 45.06%);
+}
+
+.btn-ghost:hover {
+  color: white;
+}
+
+.btn-shine {
+  position: relative;
+}
+
+.btn-shine::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, hsla(var(--hue), 100%, 41%, 0.5), transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.btn-shine:hover {
+  background: transparent;
+  box-shadow: 0 0 20px 10px hsla(var(--hue), 100%, 41%, 0.5);
+}
+
+.btn-shine:hover::before {
+  transform: translateX(100%);
+}
+
+.start-game {
+  display: none;
+  height: 100vh;  
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 30%;
+  background-color: #000000eb;
+  text-align: center;
+  color: #fff;
+  border: 2px solid lightblue;
+  margin-bottom: 100px;
+}
+
+th,
+td {
+  border: 1px solid #506476;
+  padding: 10px;
+  font-size: 18px;
+}
+.start-game__tables {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80px;
+}
+
+.start-game__block {
+  padding: 0;
+  margin-top: 40px;
+}
+
+.block {
+  position: relative;
+}
+.click {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  right: 3px;
+  left: 3px;
+  width: -webkit-fill-available;
+}
+.btns {
+  margin-top: 3px;
+  width: -webkit-fill-available;
+  height: 36px;
+  background: linear-gradient(45deg, #000000, #8bc2ce);
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(309deg, #fff, #000000);
+  }
+}
+
+
+.success {
+  background: radial-gradient(#39af3a, transparent);
+}
+
+.clicked {
+  display: none;
+}
+
+.back {
+  display: none;
+}
