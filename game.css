@@ -1,5 +1,5 @@
 body {
-  background-image: url(./assets/game-assets/intro-bg-img.jpg);
+  background-image: url(./intro-bg-img.jpg);
   background-size: cover;
   backdrop-filter: grayscale(1);
   font-family: "Exo 2", serif;
