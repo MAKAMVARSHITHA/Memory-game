@@ -68,6 +68,10 @@ h1 {
 }
 
 .levels__container, .start-game__block {
+  @media screen and (max-width:600px) {
+    flex-direction: column;
+    gap: 10px;
+  }
   filter: drop-shadow(2px 4px 6px skyblue);
     display: flex;
     align-items: center;
