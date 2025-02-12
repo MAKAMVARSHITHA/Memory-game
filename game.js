@@ -15,6 +15,9 @@
   let start_game = document.querySelector(".start-game"); //start game block component
   let back = document.querySelector(".back"); //back button element
   let levels = document.querySelector(".levels"); //levels game block component
+  let point = document.querySelector(".points"); //to store the points
+  let points_block = document.querySelector(".points-block");
+  let credits_para = document.querySelector(".credits");
 
   //to shuffle the digits which are in the array
   var shuffle = (array) => {
@@ -61,9 +64,12 @@
       clickedEl2.style.display = "none";
       if (successCount == length) { //if successfully found all pairs then display congo
         setTimeout(function () {
-          alert("congo");
+          points_block.style.display = 'block';
+          let points = successCount*100;
+          credits_para.innerHTML = "Congratulations";
+          point.innerHTML = points;
+          back.style.display = 'block';
         }, 1000);
-        back.style.display = 'block';
       }
     } else {
       setTimeout(function () {
@@ -126,7 +132,12 @@
         console.log("guesscount" + guessCount);
         if (guessCount > 14) {
           console.log(guessCount);
-          alert("completed the limit");
+          setTimeout(function () {
+            points_block.style.display = 'block';
+          credits_para.innerHTML = "Well tried";
+          let points = successCount*100;
+          point.innerHTML = points;
+          },1000);
           buttonHandler();
         }
       } else {
@@ -156,6 +167,7 @@
   back.addEventListener("click", () => {
     levels.style.display = "block";
     start_game.style.display = "none";
+    points_block.style.display = 'none';
     tableNameCount = 0;
     count = 1;
   });
