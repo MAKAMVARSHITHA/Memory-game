@@ -189,8 +189,8 @@
 
   //event on clicking the difficult level button
   difficult_level.addEventListener("click", () => {
-    let row = 5;
-    let col = 2;
+    let row = 2;
+    let col = 5;
     length = 10;
     resetValues();
     init(row, col);
