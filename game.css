@@ -16,6 +16,12 @@ body {
   flex-direction: column;
 }
 
+.intro__block {
+  width: 40%;
+  text-align: center;
+  background: radial-gradient(#efd4d485, #00000000);
+}
+
 .intro__title, h1 {
   font-size: 48px;
   color: #070b04;
@@ -165,6 +171,10 @@ td {
   border: 1px solid #506476;
   padding: 10px;
   font-size: 18px;
+
+   @media screen and (min-width:994px) {
+    height: 50px;
+  }
 }
 .start-game__tables {
   display: flex;
@@ -193,6 +203,10 @@ td {
   width: -webkit-fill-available;
   height: 36px;
   background: linear-gradient(45deg, #000000, #8bc2ce);
+
+   @media screen and (min-width:994px) {
+    height: 65px;
+  }
 
   &:hover {
     transition: all 0.3s ease-in-out;
