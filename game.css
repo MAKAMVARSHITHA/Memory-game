@@ -32,7 +32,7 @@ body {
 }
 
 a {
-  background-image: linear-gradient(to right, #6e8e99, #ebe4e9 50%, #11bbc2f2 50%);
+  background-image: linear-gradient(to right, #6e8e99, #ebe4e9 50%, #000 50%);
   background-size: 200% 100%;
   background-position: -100%;
   display: inline-block;
