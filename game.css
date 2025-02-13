@@ -164,7 +164,7 @@ table {
   text-align: center;
   color: #fff;
   border: 2px solid lightblue;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 th,
@@ -215,6 +215,17 @@ td {
   }
 }
 
+.chances {
+  display: flex;
+    justify-content: center;
+
+    p {
+      margin: 0 0;
+      background: radial-gradient(#15d1df, #5dcfd1);
+    padding: 10px;
+    border: 2px solid;
+    }
+}
 
 .success {
   background: radial-gradient(#39af3a, transparent);

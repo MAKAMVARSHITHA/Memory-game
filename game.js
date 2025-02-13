@@ -18,6 +18,9 @@
   let point = document.querySelector(".points"); //to store the points
   let points_block = document.querySelector(".points-block");
   let credits_para = document.querySelector(".credits");
+  let limit_count = document.querySelector(".limit_count");
+  let total_guess_limit ;
+  limit_count.innerHTML = 15;
 
   //to shuffle the digits which are in the array
   var shuffle = (array) => {
@@ -130,20 +133,27 @@
         console.log(tableNameCount);
         guessCount++;
         console.log("guesscount" + guessCount);
-        if (guessCount > 14) {
-          console.log(guessCount);
-          setTimeout(function () {
-            points_block.style.display = 'block';
-          credits_para.innerHTML = "Well tried";
-          let points = successCount*100;
-          point.innerHTML = points;
-          },1000);
-          buttonHandler();
-        }
       } else {
         if (tableNameCount == 1 && tableName == "secondary-table") {
           tableNameCount = 0;
           storeNum(element);
+          total_guess_limit = 15 - guessCount;
+          limit_count.innerHTML = total_guess_limit;
+
+          if (guessCount >= 15) {
+            console.log(guessCount);
+            setTimeout(function () {
+              points_block.style.display = 'block';
+            credits_para.innerHTML = "Well tried";
+            let points = successCount*100;
+            point.innerHTML = points;
+            },1000);
+          }
+          setTimeout(function () {
+            if(total_guess_limit == 0) {
+              alert('completed the chances');
+            }
+          },1000);
           console.log(tableNameCount);
         }
       }
@@ -179,6 +189,7 @@
     start_game.style.display = "block";
     levels.style.display = "none";
     back.style.display = 'none';
+    limit_count.innerHTML = 15;
   };
 
   //event on clicking the easy level button
