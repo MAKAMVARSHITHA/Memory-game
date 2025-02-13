@@ -53,6 +53,7 @@
     ArrayBts.forEach((clicks) => {
       clicks.classList.add("clicked");
     });
+    fail.style.display="none";
   };
 
   //to comparing the 2 numbers which are selected in the 2 tables
@@ -152,8 +153,11 @@
           setTimeout(function () {
             if(total_guess_limit == 0) {
               alert('completed the chances');
+              buttonHandler();
+              fail.style.display="none";
             }
           },1000);
+
           console.log(tableNameCount);
         }
       }
