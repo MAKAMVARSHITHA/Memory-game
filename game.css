@@ -217,14 +217,15 @@ td {
 
 .chances {
   display: flex;
-    justify-content: center;
+  justify-content: center;
 
-    p {
-      margin: 0 0;
-      background: radial-gradient(#15d1df, #5dcfd1);
+  p {
+    margin: 0 0;
+    background: radial-gradient(#14bbd2, #050707);
     padding: 10px;
-    border: 2px solid;
-    }
+    border: 1px solid #14bbd2;
+    color: #ccf6f2;
+  }
 }
 
 .success {
