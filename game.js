@@ -194,6 +194,7 @@
     levels.style.display = "none";
     back.style.display = 'none';
     limit_count.innerHTML = 15;
+    fail.style.display="block";
   };
 
   //event on clicking the easy level button
