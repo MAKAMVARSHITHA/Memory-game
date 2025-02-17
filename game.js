@@ -19,6 +19,8 @@
   let points_block = document.querySelector(".points-block");
   let credits_para = document.querySelector(".credits");
   let limit_count = document.querySelector(".limit_count");
+  let start = document.querySelector('.start')//instruction button
+  let instruction = document.querySelector('.instruction');
   let total_guess_limit ;
   limit_count.innerHTML = 15;
 
@@ -152,7 +154,6 @@
           }
           setTimeout(function () {
             if(total_guess_limit == 0) {
-              alert('completed the chances');
               buttonHandler();
               fail.style.display="none";
             }
@@ -176,6 +177,10 @@
   };
 
   fail.addEventListener("click", buttonHandler); // event on clicking the quit button
+
+  start.addEventListener('click', () => {
+    instruction.style.display = 'none';
+  })
 
   //event on clicking the back button
   back.addEventListener("click", () => {
