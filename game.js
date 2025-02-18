@@ -54,6 +54,7 @@
     back.style.display = 'block';
     ArrayBts.forEach((clicks) => {
       clicks.classList.add("clicked");
+      clicks.classList.remove('btns');
     });
     fail.style.display="none";
   };
@@ -62,13 +63,13 @@
   var compare = () => {
     if (FirstNum == SecondNum) {
       successCount++;
-      console.log(clickedEl1);
-      console.log(clickedEl2);
-      clickedEl1.parentElement.parentElement.classList.add(`success`);
-      clickedEl2.parentElement.parentElement.classList.add(`success`);
-      clickedEl1.style.display = "none";
-      clickedEl2.style.display = "none";
+      clickedEl1.classList.add(`success`);
+      clickedEl2.classList.add(`success`);
+      clickedEl1.classList.remove('btns');
+      clickedEl2.classList.remove('btns');
+   
       if (successCount == length) { //if successfully found all pairs then display congo
+        fail.style.display="none";
         setTimeout(function () {
           points_block.style.display = 'block';
           let points = successCount*100;
@@ -81,7 +82,7 @@
       setTimeout(function () {
         clickedEl1.classList.remove("clicked");
         clickedEl2.classList.remove("clicked");
-      }, 500);
+      }, 700);
       tableNameCount = 0;
     }
   };
@@ -90,14 +91,9 @@
     let blocks = document.querySelectorAll(".block"); // Select elements with class "block"
 
     blocks.forEach((block) => {
-      let div = document.createElement("div"); // Create a new div
-      div.classList.add(`click`);
-      block.appendChild(div); // Append div inside each .block element
-      btn = document.createElement("button");
-      div.appendChild(btn);
-      btn.classList.add("btns");
-      btn.id = Math.floor(Math.random() * 1000); //to generate different Ids to the buttons
-      ArrayBts.push(btn);
+      block.id = Math.floor(Math.random() * 1000);
+      block.classList.add("btns");
+      ArrayBts.push(block);
     });
   };
 
@@ -106,14 +102,12 @@
     if (count == 1) { //represents 1st table
       element.classList.add("clicked");
       clickedEl1 = element;
-      FirstNum = element.parentElement.parentElement.textContent.trim();
-      console.log(FirstNum);
+      FirstNum = element.textContent.trim();
       count++;
     } else if (count == 2) { //represents 2nd table
       element.classList.add("clicked");
       clickedEl2 = element;
-      SecondNum = element.parentElement.parentElement.textContent.trim();
-      console.log(SecondNum);
+      SecondNum = element.textContent.trim();
       count = 1;
       compare();
     } else {
@@ -127,15 +121,12 @@
       var clickedID = event.target.id;
       let element = document.getElementById(clickedID);
       let tableName =
-        element.parentElement.parentElement.parentElement.parentElement
+        element.parentElement.parentElement
           .parentElement.className;
       if (tableNameCount == 0 && tableName == "initial-table") {
-        console.log(element);
         storeNum(element);
         tableNameCount = 1;
-        console.log(tableNameCount);
         guessCount++;
-        console.log("guesscount" + guessCount);
       } else {
         if (tableNameCount == 1 && tableName == "secondary-table") {
           tableNameCount = 0;
@@ -144,7 +135,6 @@
           limit_count.innerHTML = total_guess_limit;
 
           if (guessCount >= 15) {
-            console.log(guessCount);
             setTimeout(function () {
               points_block.style.display = 'block';
             credits_para.innerHTML = "Well tried";
@@ -158,8 +148,6 @@
               fail.style.display="none";
             }
           },1000);
-
-          console.log(tableNameCount);
         }
       }
     }

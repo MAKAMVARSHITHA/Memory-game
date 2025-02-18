@@ -1,10 +1,23 @@
 body {
-  background-image: url(./intro-bg-img.jpg);
   background-size: cover;
-  backdrop-filter: grayscale(1);
   font-family: "Exo 2", serif;
   height: unset;
   margin: 0;
+  background: linear-gradient(300deg, #37b0d8, #0a080a, #309232);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .intro {
@@ -102,6 +115,21 @@ a:hover::before{
     margin-top: 50px;
     width: 13%;
     margin-bottom: 50px;
+    border-radius: 50%;
+    height: 50px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+
+    @media screen and (min-width:600px) {
+      font-size: 20px;
+    }
+
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      background: #417b92;
+    }
   }
 }
 
@@ -165,6 +193,9 @@ h1 {
 .btn-shine {
   position: relative;
 }
+.clicked.btns {
+  opacity: 1;
+}
 
 .btn-shine::before {
   position: absolute;
@@ -226,6 +257,11 @@ td {
 
 .block {
   position: relative;
+  height: 36px;
+
+  @media screen and (min-width:994px) {
+    height: 55px;
+  }
 }
 .click {
   position: absolute;
@@ -238,16 +274,12 @@ td {
 .btns {
   margin-top: 3px;
   width: -webkit-fill-available;
-  height: 36px;
-  background: linear-gradient(45deg, #000000, #8bc2ce);
-
-  @media screen and (min-width:994px) {
-    height: 65px;
-  }
+  background: linear-gradient(309deg, #14bbd2, #000000);
+  opacity: 0;
 
   &:hover {
     transition: all 0.3s ease-in-out;
-    background: linear-gradient(309deg, #fff, #000000);
+    cursor: pointer;
   }
 }
 
@@ -266,10 +298,7 @@ td {
 
 .success {
   background: radial-gradient(#39af3a, transparent);
-}
-
-.clicked {
-  display: none;
+  opacity: 1;
 }
 
 .back {
