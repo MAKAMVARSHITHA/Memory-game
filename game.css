@@ -261,8 +261,8 @@ td {
 }
 
 .start-game__block {
-  padding: 0;
-  margin-top: 40px;
+    padding: 13px;
+    margin-top: 25px;
 }
 
 .block {
